@@ -1,0 +1,31 @@
+﻿@model Sadad.Sadded.WebsiteExample.Models.BaseModel
+<div class="form-group">
+    @Html.LabelFor(model => model.ApiKey, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.ApiKey, new { htmlAttributes = new { @class = "form-control", @style = "max-width:unset !important;width: 91.5%;", autocomplete = "off", disabled = "disabled", @readonly = "readonly"} })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.BranchId, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-4">
+        @Html.EditorFor(model => model.BranchId, new { htmlAttributes = new { @class = "form-control", autocomplete = "off", disabled = "disabled", @readonly = "readonly" } })
+    </div>
+
+    @Html.LabelFor(model => model.TerminalId, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-4">
+        @Html.EditorFor(model => model.TerminalId, new { htmlAttributes = new { @class = "form-control", autocomplete = "off", disabled = "disabled", @readonly = "readonly" } })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.VendorId, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-4">
+        @Html.EditorFor(model => model.VendorId, new { htmlAttributes = new { @class = "form-control", autocomplete = "off", disabled = "disabled", @readonly = "readonly" } })
+    </div>
+    @Html.LabelFor(model => model.BaseUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-4">
+        @Html.EditorFor(model => model.BaseUrl, new { htmlAttributes = new { @class = "form-control", autocomplete = "off", disabled = "disabled", @readonly = "readonly" } })
+    </div>
+</div>
+<hr />
