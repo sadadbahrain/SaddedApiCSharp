@@ -1,0 +1,8 @@
+E:\GIT\SaddedApiCSharp-master\SaddedApiCSharp-master\Sadad.Sadded.ApiClient\bin\Debug\Sadad.Sadded.ApiClient.dll
+E:\GIT\SaddedApiCSharp-master\SaddedApiCSharp-master\Sadad.Sadded.ApiClient\bin\Debug\Sadad.Sadded.ApiClient.pdb
+E:\GIT\SaddedApiCSharp-master\SaddedApiCSharp-master\Sadad.Sadded.ApiClient\bin\Debug\Newtonsoft.Json.dll
+E:\GIT\SaddedApiCSharp-master\SaddedApiCSharp-master\Sadad.Sadded.ApiClient\bin\Debug\Newtonsoft.Json.xml
+E:\GIT\SaddedApiCSharp-master\SaddedApiCSharp-master\Sadad.Sadded.ApiClient\obj\Debug\Sadad.Sadded.ApiClient.csproj.CoreCompileInputs.cache
+E:\GIT\SaddedApiCSharp-master\SaddedApiCSharp-master\Sadad.Sadded.ApiClient\obj\Debug\Sadad.Sadded.ApiClient.csproj.CopyComplete
+E:\GIT\SaddedApiCSharp-master\SaddedApiCSharp-master\Sadad.Sadded.ApiClient\obj\Debug\Sadad.Sadded.ApiClient.dll
+E:\GIT\SaddedApiCSharp-master\SaddedApiCSharp-master\Sadad.Sadded.ApiClient\obj\Debug\Sadad.Sadded.ApiClient.pdb

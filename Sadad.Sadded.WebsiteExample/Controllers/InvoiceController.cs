@@ -14,6 +14,7 @@ namespace Sadad.Sadded.WebsiteExample.Controllers
         private int branchId = Convert.ToInt32(ConfigurationManager.AppSettings["BranchId"]);
         private int terminalId = Convert.ToInt32(ConfigurationManager.AppSettings["TerminalId"]);
         private int vendorId = Convert.ToInt32(ConfigurationManager.AppSettings["VendorId"]);
+        private const string paymentGatewayResponsePage = "{0}Invoice/GatewayResponse";
 
         /// <summary>
         /// Get method for CreateInvoice page, passing base configurations to be displayed on page
@@ -24,7 +25,28 @@ namespace Sadad.Sadded.WebsiteExample.Controllers
             InvoiceCreateModel invoiceCreateModel = new InvoiceCreateModel();
             SetBaseConfigurations(invoiceCreateModel);
             AddNotificationModesInBag();
+            SetDefaultSuccessErrorUrl(invoiceCreateModel, Request.Url.ToString());
             return View(invoiceCreateModel);
+        }
+
+        /// <summary>
+        /// This controller will display response from payment gateway after making payment.
+        /// </summary>
+        /// <returns>GatewayResponse view</returns>
+        [HttpPost]
+        public ActionResult GatewayResponse()
+        {
+            string resultCode = Request.Params["ResultCode"];
+            string resultMessage = Request.Params["ResultMessage"];
+            string transactionIdentifier = Request.Params["TransactionIdentifier"];
+
+            PaymentResponseModel model = new PaymentResponseModel()
+            {
+                ResultCode = resultCode,
+                ResultMessage = resultMessage,
+                TransactionIdentifier = transactionIdentifier
+            };
+            return View(model);
         }
 
         /// <summary>
@@ -47,6 +69,8 @@ namespace Sadad.Sadded.WebsiteExample.Controllers
 
                 DateTime invoiceDate = invoiceCreateModel.Date != null ?
                     invoiceCreateModel.Date.Value : DateTime.Now;
+
+                SetDefaultSuccessErrorUrl(invoiceCreateModel, Request.Url.ToString());
 
                 CreateInvoiceRequest request = new CreateInvoiceRequest()
                 {
@@ -113,6 +137,17 @@ namespace Sadad.Sadded.WebsiteExample.Controllers
             notificationModes.Add("SMS", 100);
             notificationModes.Add("Email", 200);
             ViewBag.NotificationModes = notificationModes;
+        }
+
+        /// <summary>
+        /// This method sets default success and error urls path to Invoice/GatewayResponse
+        /// </summary>
+        /// <returns>void</returns>
+        [NonAction]
+        private void SetDefaultSuccessErrorUrl(InvoiceCreateModel model, string websiteBaseUrl)
+        {
+            model.SuccessUrl = model.SuccessUrl ?? string.Format(paymentGatewayResponsePage, websiteBaseUrl);
+            model.ErrorUrl = model.ErrorUrl ?? string.Format(paymentGatewayResponsePage, websiteBaseUrl);
         }
 
         /// <summary>

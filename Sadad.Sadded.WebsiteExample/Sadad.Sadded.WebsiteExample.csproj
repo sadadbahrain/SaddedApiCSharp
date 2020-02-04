@@ -154,6 +154,7 @@
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\InvoiceCreateModel.cs" />
     <Compile Include="Models\InvoiceStatusModel.cs" />
+    <Compile Include="Models\PaymentResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -215,6 +216,7 @@
     <Content Include="Views\Invoice\CreateInvoice.cshtml" />
     <Content Include="Views\Invoice\CheckStatus.cshtml" />
     <Content Include="Views\Shared\_configuration.cshtml" />
+    <Content Include="Views\Invoice\GatewayResponse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

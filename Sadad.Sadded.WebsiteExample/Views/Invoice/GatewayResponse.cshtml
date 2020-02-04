@@ -1,0 +1,33 @@
+﻿@model Sadad.Sadded.WebsiteExample.Models.PaymentResponseModel
+@{
+    ViewBag.Title = "Payment Gateway Response";
+}
+
+<h2>Payment Gateway Response</h2>
+
+@if (Model != null)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th colspan="2" style="background-color:#0078d4; color:white; text-align: center; border:solid 1px;"><b>Server Response</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="col-md-2" style="background-color:#0078d4; color:white;"><b>Result Code</b></td>
+                <td class="col-md-10">@Model.ResultCode</td>
+            </tr>
+            <tr>
+                <td class="col-md-2" style="background-color:#0078d4; color:white;"><b>Result Message</b></td>
+                <td class="col-md-10">@Model.ResultMessage</td>
+            </tr>
+            <tr>
+                <td class="col-md-2" style="background-color:#0078d4; color:white;"><b>Transaction Identifier</b></td>
+                <td class="col-md-10">@Model.TransactionIdentifier</td>
+            </tr>            
+        </tbody>
+    </table>
+}
+
+<p>@Html.ActionLink("Go back to Create Invoice", "CreateInvoice", "Invoice")</p>
